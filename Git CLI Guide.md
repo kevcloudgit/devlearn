@@ -4,13 +4,13 @@
 Command line instructions 
 
 
-Git global setup
-git config --global user.name "Kevin_Tang1"
-git config --global user.email "kevin_tang1@dell.com"
+##Git global setup
+*git config --global user.name "Kevin_Tang1"
+*git config --global user.email "kevin_tang1@dell.com"
 
 
 
-Create a new repository
+##Create a new repository
 git clone https://contribute.dub.emea.dell.com/kevin_tang1/TestProject.git
 cd TestProject
 touch README.md
