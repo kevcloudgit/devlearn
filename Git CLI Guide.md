@@ -5,8 +5,8 @@ Command line instructions
 
 
 ##Git global setup
-*git config --global user.name "Kevin_Tang1"
-*git config --global user.email "kevin_tang1@dell.com"
+*git config --global user.name ""
+*git config --global user.email ""
 
 
 
