@@ -1,18 +1,28 @@
 import requests
+import urllib
+from io import StringIO
+import csv
 
-#from urllib import requests   #got error ImportError: cannot import name 'requests', pip install urllib
+# from urllib import requests   #got error ImportError: cannot import name 'requests', pip install urllib
 
-csv_link = 'https://query1.finance.yahoo.com/v7/finance/download/AAPL?period1=1543462665&period2=1574998665&interval=1d&events=history&crumb=1FCAsktNLB/'
+csv_link = urllib.request('https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csvv').read().decode('ascii', 'ignore')
 
 def obtain_data(csv_link):
+    
+    csv_file = StringIO(csv_link)
+    dsvReader = csv.reader(csv_file)
+    
+    '''
     response = requests.urlopen(csv_link)
     csv = response.read()
-    csv_string = str(csv)  # whatever been read will be saved as string 
+    csv_string = str(csv)  # whatever been read will be saved as string
     lines = csv_string.split("\\n")
     save_loc = r'mystockinfo.csv'
-    fstep = open(save_loc,"w")
-    for line in lines:
+    '''
+    fstep = open(save_loc, "w")
+    for line in csvReader:
         fstp.write(line + "\n")
+        print(line)
     fstep.close()
 
 obtain_data(csv_link)
