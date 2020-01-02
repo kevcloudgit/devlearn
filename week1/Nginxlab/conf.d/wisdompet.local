@@ -1,0 +1,28 @@
+server {
+        listen 192.168.56.13:4000;
+
+        root /var/www/wisdompet.local;
+
+        server_name wisdompet.local www.wisdompet.local;
+
+        index index.html index.htm index.php;
+
+        location /images/ {
+                allow 192.168.0.0/24;
+                autoindex on;
+        }
+
+        location / {
+                try_files $uri $uri/ =404;
+
+        }
+
+        error_page 404 /404.html;
+        location = /404.html {
+                internal;
+        }
+
+        #server_name jrtest.local www.jrtest.local;
+        #root /var/www/jrtest.local;
+}
+
